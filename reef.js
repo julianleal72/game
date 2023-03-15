@@ -18,7 +18,7 @@ export class Reef {
     }
 
     setPattern(){
-        let rPBA = this.reefPatterns[Math.round(Math.random() * 6) + 1]
+        let rPBA = this.reefPatterns[Math.round(Math.random() * 6)]
         for(let coord of rPBA){
             coord["x"] += this.startPoint["xAdj"]
             coord["y"] += this.startPoint["yAdj"]

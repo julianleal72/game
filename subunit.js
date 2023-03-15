@@ -29,7 +29,7 @@ export class SubUnit {
 
   setHazards() {
     if (this.region === "Polar") this.setIceBergs();
-    if (this.region === "Tropical") this.setReefs();
+    else if (this.region === "Tropical") this.setReefs();
     //if (this.region === "Temperate") console.log("Fuck")
   }
 
@@ -37,8 +37,8 @@ export class SubUnit {
 
   setReefs() {
     let reef = new Reef
-    for(let coord of Reef.pattern){
-      this.layout[coord["y"]][coord["x"]] = "Reef"
+    for(let coord of reef.pattern){
+      this.layout[coord["y"]][coord["x"]].hazards.push("Reef")
     }
   }
 
@@ -48,7 +48,7 @@ export class SubUnit {
       for (let x = 0; x < this.size; x++) {
         let temp = Math.random();
         if (temp > 0.5 && bergCount > 0) {
-          this.layout[y][x].hazards = ["Iceberg"];
+          this.layout[y][x].hazards.push("Iceberg");
           bergCount--;
         }
       }

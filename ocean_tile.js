@@ -7,7 +7,7 @@ export class OceanTile //extends Tile
     // this.east
     // this.west
     this.region
-    this.hazards
+    this.hazards = []
 
     
     //this.description = once again base on coords and also what items are there
